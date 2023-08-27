@@ -24,16 +24,18 @@ int main(void){
     menu_principal();
     sobre();
     menu_cigana();
-    menu_cliente();
-    menu_adivinhacoes();
+    
+    menu_principal();
+    sobre();
+   
+
     return 0;
 }
-
 
 void menu_principal(void){
     char op;
     system("clear||cls");
-    printf("\n");
+     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
     printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
@@ -90,40 +92,71 @@ void sobre(void){
 }
 
     void menu_cigana(void) {
-    char op;
+    
+   
+char op;
     system("clear||cls");
     printf("\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                         ///\n");
-    printf("///            ===================================================          ///\n");
-    printf("///            = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
-    printf("///            = = = =  Sistema de Adivinhação de Futuros  = = = =          ///\n");
-    printf("///            = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
-    printf("///            ===================================================          ///\n");
-    printf("///               Developed by @r3inaldo_jr -- since Aug, 2023              ///\n");
-    printf("///                                                                         ///\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                         ///\n");
-    printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
-    printf("///            = = = = = = = = =  Menu Aluno = = = = = = = = =              ///\n");
-    printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
-    printf("///                                                                         ///\n");
-    printf("///            1. Adivinhar futuro Financeiro                               ///\n");
-    printf("///            2. Advinhar futuro Amoroso                                   ///\n");
-    printf("///            3. Adivinhar futuro Emocional                                ///\n");
-    printf("///            4. Adivinhar futuro Profissional                             ///\n");
-    printf("///            0. Voltar ao menu anterior                                   ///\n");
-    printf("///                                                                         ///\n");
-    printf("///            Escolha a opção desejada: ");
-    scanf("%c", &op);
+    
+   
+printf("=====================================\n");
+    printf("   Sistema de Adivinhação de Futuros  \n");
+    printf("=====================================\n");
+    printf("1. Adivinhar futuro Financeiro\n");
+    printf("2. Adivinhar futuro Amoroso\n");
+    printf("3. Adivinhar futuro Emocional\n");
+    printf("4. Adivinhar futuro Profissional\n");
+    printf("0. Voltar ao menu anterior\n");
+    printf("=====================================\n");
+    printf("Escolha a opção desejada: ");
+    scanf(" %c", &op);
     getchar();
-    printf("///                                                                         ///\n");
-    printf("///                                                                         ///\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("=====================================\n");
     printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    
+   
+printf(">>> Tecle <ENTER> para continuar...\n");
     getchar();
+
+    
+    getchar();
+
+switch (op) {
+        case '1':
+            menu_financeiro();
+            
+            menu
+break;
+        case '2':
+            menu_amoroso();
+            
+            menu_am
+break;
+        case '3':
+            menu_emocional();
+            
+            menu_emocional();
+           
+
+           
+break;
+        case '4':
+            menu_profissional();
+            
+            menu_profissional();
+           
+break;
+        case '0':
+            // Handle the option to go back to the previous menu
+            
+           
+break;
+        default:
+            // Handle invalid input
+            break;
+    }
 }
+
 
     void menu_financeiro(void){
     system("clear||cls");
