@@ -29,7 +29,7 @@ int main() {
         printf("#####################################################\n");
         printf("#####################################################\n");
         printf("Escolha uma opção:");
-        scanf(" %c", &opcao); // Note o espaço antes de %c para consumir o caractere de nova linha anterior
+        scanf(" %c", &opcao);
         getchar(); // Limpar o caractere de nova linha
         printf("\n");
 
