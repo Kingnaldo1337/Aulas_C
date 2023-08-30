@@ -32,49 +32,49 @@ void leituraDeCartas() {
 
     printf("Você tirou a carta: %s\n", cartas[cartaIndex]);
     if (cartaIndex == 0){
-		printf("vai da o cu\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 1){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 2){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 3){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 4){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 5){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 6){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 7){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 8){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 9){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 10){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 11){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 12){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 13){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 14){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 15){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 16){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 17){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 18){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 19){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 20){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 	} else if (cartaIndex == 21){
-		printf("o cu vc vai dar\n");
+		printf("em breve...\n");
 
 }	
 }
