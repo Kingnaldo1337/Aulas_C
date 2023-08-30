@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include "cigana.h"
 #include <time.h>
+#include <locale.h>
 
 int main() {
+	setlocale(LC_ALL,"Portuguese_Brazil");
     srand(time(NULL));
 
     char opcao;
@@ -14,27 +16,27 @@ int main() {
         printf("#####################################################\n");
         printf("##                 Sigana Virtual                  ##\n");
         printf("##Desenvolvedor: Reinaldo Alves Pereira Junior     ##\n");
-        printf("##Curso: Sistemas de InformaÁ„o 2o periodo         ##\n");
+        printf("##Curso: Sistemas de Informa√ß√£o 2o periodo         ##\n");
         printf("##Instagram: @r3inaldo_jr)                         ##\n");
-        printf("##Jardim do seridÛ RN                              ##\n");
+        printf("##Jardim do serid√≥ RN                              ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
         printf("##                                                 ##\n");
-        printf("##       1 - Leitura de Cartas de TarÙ              ##\n");
-        printf("##       2 - HorÛscopo Di·rio                      ##\n");
+        printf("##       1 - Leitura de Cartas de Tar√¥             ##\n");
+        printf("##       2 - Hor√≥scopo Di√°rio                      ##\n");
         printf("##       3 - Sobre Seu Signo                       ##\n");
         printf("##       0 - Sair                                  ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
-        printf("    Escolha uma opÁ„o:");
-        scanf(" %c", &opcao); // Note o espaÁo antes de %c para consumir o caractere de nova linha anterior
+        printf("Escolha uma op√ß√£o:");
+        scanf(" %c", &opcao); // Note o espa√ßo antes de %c para consumir o caractere de nova linha anterior
         getchar(); // Limpar o caractere de nova linha
         printf("\n");
 
         switch (opcao) {
             case '1':
-            	limpartela();
                 leituraDeCartas();
+                continuar();
                 break;
 
             case '2':
@@ -55,7 +57,7 @@ int main() {
 
             default:
             	limpartela();
-                printf("OpÁ„o inv·lida. Escolha uma opÁ„o v·lida do menu.\n");
+                printf("Op√ß√£o inv√°lida. Escolha uma op√ß√£o v√°lida do menu.\n");
                 break;
         }
 
