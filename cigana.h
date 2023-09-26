@@ -5,7 +5,5 @@ void menu_principal();
 void leituraDeCartas();
 void horoscopoDiario();
 void sobreSeuSigno();
-void limpartela();
-void continuar();
 
 #endif
