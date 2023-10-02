@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "cigana.h"
 #include "cartas.h"
 #include "horoscopo.h"
@@ -7,14 +8,31 @@
 #include <time.h>
 #include <locale.h>
 
+int fazerLogin() {
+    char login[50];
+    char senha[50];
 
-int main() {
-	setlocale(LC_ALL,"Portuguese_Brazil");
-    srand(time(NULL));
+    printf("#####################################################\n");
+    printf("##               Faça o Login                       ##\n");
+    printf("#####################################################\n");
 
+    printf("Login: ");
+    scanf("%s", login);
+    printf("Senha: ");
+    scanf("%s", senha);
+
+    if (strcmp(login, "admin") == 0 && strcmp(senha, "admin") == 0) {
+        return 1; // Login bem-sucedido
+    } else {
+        printf("Login ou senha incorretos. Tente novamente.\n");
+        return 0; // Login falhou
+    }
+}
+
+void menuPrincipal() {
     char opcao;
-	  do{
-	    
+
+    do {
         printf("#####################################################\n");
         printf("#####################################################\n");
         printf("##                 Sigana Virtual                  ##\n");
@@ -40,36 +58,48 @@ int main() {
             case '1':
                 leituraDeCartas();
                 printf("Pressione enter para continuar...");
-				getchar();
-				system("clear");
+                getchar();
+                system("clear");
                 break;
 
             case '2':
                 horoscopoDiario();
                 printf("Pressione enter para continuar...");
-				getchar();
-				system("clear");
+                getchar();
+                system("clear");
                 break;
-            
 
             case '3':
-            	sobreSeuSigno();
+                sobreSeuSigno();
                 printf("Pressione enter para continuar...");
-				getchar();
-				system("clear");
+                getchar();
+                system("clear");
                 break;
 
             case '0':
-            	system("clear");
+                system("clear");
                 printf("Saindo do programa...\n");
                 break;
 
             default:
-            	system("clear");
+                system("clear");
                 printf("Opção inválida. Escolha uma opção válida do menu.\n");
                 break;
         }
-
     } while (opcao != '0');
 }
 
+int main() {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    srand(time(NULL));
+
+    int loginSucesso = 0;
+
+    do {
+        loginSucesso = fazerLogin();
+    } while (!loginSucesso);
+
+    menuPrincipal();
+
+    return 0;
+}
