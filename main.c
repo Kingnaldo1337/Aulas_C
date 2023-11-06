@@ -21,12 +21,22 @@ int fazerLogin() {
     printf("Senha: ");
     scanf("%s", senha);
 
-    if (strcmp(login, "admin") == 0 && strcmp(senha, "admin") == 0) {
-        return 1; // Login bem-sucedido
-    } else {
-        printf("Login ou senha incorretos. Tente novamente.\n");
-        return 0; // Login falhou
+    // Abrir o arquivo para escrita (ou criação, se não existir)
+    FILE *arquivo = fopen("dados_de_login.txt", "a");
+
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo para escrita.\n");
+        return 0; // Falha ao salvar
     }
+
+    // Escrever o login e a senha no arquivo
+    fprintf(arquivo, "Login: %s | Senha: %s\n", login, senha);
+
+    fclose(arquivo);
+
+    printf("Login bem-sucedido. Dados de login salvos.\n");
+    system("cls");
+    return 1; // Login bem-sucedido
 }
 
 void menuPrincipal() {
@@ -59,30 +69,30 @@ void menuPrincipal() {
                 leituraDeCartas();
                 printf("Pressione enter para continuar...");
                 getchar();
-                system("clear");
+                system("cls");
                 break;
 
             case '2':
                 horoscopoDiario();
                 printf("Pressione enter para continuar...");
                 getchar();
-                system("clear");
+                system("cls");
                 break;
 
             case '3':
                 sobreSeuSigno();
                 printf("Pressione enter para continuar...");
                 getchar();
-                system("clear");
+                system("cls");
                 break;
 
             case '0':
-                system("clear");
+                system("cls");
                 printf("Saindo do programa...\n");
                 break;
 
             default:
-                system("clear");
+                system("cls");
                 printf("Opção inválida. Escolha uma opção válida do menu.\n");
                 break;
         }

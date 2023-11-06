@@ -1,7 +1,7 @@
 void sobreSeuSigno(void) {
 	char opcao1[2];
 		while(1){
-        system("clear");
+        system("cls");
 		printf("#####################################################\n");
         printf("##     	Quer saber mais osbre seu Signo?           ##\n");
         printf("##       	Selecione o seu Signo              ##\n");
