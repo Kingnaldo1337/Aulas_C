@@ -5,8 +5,10 @@
 #include "cartas.h"
 #include "horoscopo.h"
 #include "signo.h"
+#include "cadastrar_cliente.h"
 #include <time.h>
 #include <locale.h>
+
 
 int fazerLogin() {
     char login[50];
@@ -56,6 +58,7 @@ void menuPrincipal() {
         printf("##       1 - Leitura de Cartas de Tarô             ##\n");
         printf("##       2 - Horóscopo Diário                      ##\n");
         printf("##       3 - Sobre Seu Signo                       ##\n");
+        printf("##       4 - Cadastro de cliente                   ##\n");
         printf("##       0 - Sair                                  ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
@@ -85,7 +88,12 @@ void menuPrincipal() {
                 getchar();
                 system("cls");
                 break;
-
+            case '4':
+    			cadastrarCliente();
+    			printf("Pressione enter para continuar...");
+    			getchar();
+			    system("cls");
+			    break;
             case '0':
                 system("cls");
                 printf("Saindo do programa...\n");
