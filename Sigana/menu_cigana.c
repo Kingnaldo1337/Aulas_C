@@ -1,62 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "cigana.h" 
+#include "cartas.h"
+#include "horoscopo.h"
+#include "signo.h"
+#include <locale.h>
 #include <string.h>
-#include "clientes.h"
 
-void menuPrincipal();
-void menuClientes() {
-    char opcaoClientes;
+void menuCigana() {
+    char opcao;
 
     do {
         printf("#####################################################\n");
-        printf("##                 Menu de Clientes                ##\n");
+        printf("##               Menu Cigana                        ##\n");
         printf("#####################################################\n");
         printf("##                                                 ##\n");
-        printf("##       1 - Cadastrar Cliente                      ##\n");
-        printf("##       2 - Listar Clientes                        ##\n");
-        printf("##       3 - Apagar Cliente                         ##\n");
-        printf("##       4 - Modificar Cliente                      ##\n");
+        printf("##       1 - Leitura de Cartas                     ##\n");
+        printf("##       2 - Horoscopo Diario                      ##\n");
+        printf("##       3 - Sobre Seu Signo                       ##\n");
         printf("##       0 - Voltar ao Menu Principal               ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
         printf("Escolha uma opção:");
-        scanf(" %c", &opcaoClientes);
+        scanf(" %c", &opcao);
         getchar(); // Limpar o caractere de nova linha
         printf("\n");
 
-        switch (opcaoClientes) {
+        switch (opcao) {
             case '1':
-                cadastrarCliente();
+                leituraDeCartas();
                 printf("Pressione enter para continuar...");
                 getchar();
                 system("cls");
                 break;
 
             case '2':
-                listarClientes();
+                horoscopoDiario();
                 printf("Pressione enter para continuar...");
                 getchar();
                 system("cls");
                 break;
 
             case '3':
-                apagarCliente();
-                printf("Pressione enter para continuar...");
-                getchar();
-                system("cls");
-                break;
-
-            case '4':
-                modificarCliente();
+                sobreSeuSigno();
                 printf("Pressione enter para continuar...");
                 getchar();
                 system("cls");
                 break;
 
             case '0':
-                menuPrincipal();
-                printf("Pressione enter para continuar...");
-                getchar();
                 system("cls");
                 return;
 
@@ -65,5 +57,5 @@ void menuClientes() {
                 printf("Opção inválida. Escolha uma opção válida do menu.\n");
                 break;
         }
-    } while (opcaoClientes != '0');
+    } while (opcao != '0');
 }

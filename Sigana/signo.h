@@ -1,3 +1,5 @@
+#include <string.h>
+
 void sobreSeuSigno(void) {
     char cpf[15];
 

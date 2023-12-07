@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Sigana/cigana.h"
-#include "Sigana/signo.h"
-#include "Sigana/horoscopo.h"
-#include "Sigana/cartas.h"
 #include "Clientes/clientes.h"
 #include "Clientes/menu_clientes.h"
+#include "Sigana/menu_cigana.h"
 #include <time.h>
 #include <locale.h>
+
 
 
 
@@ -26,19 +24,21 @@ int fazerLogin() {
     scanf("%s", senha);
 
     // Abrir o arquivo para escrita (ou criação, se não existir)
-    FILE *arquivo = fopen("dados_de_login.txt", "a");
+    FILE *arquivo = fopen("dados_de_login.dat", "ab");
 
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo para escrita.\n");
         return 0; // Falha ao salvar
     }
 
-    // Escrever o login e a senha no arquivo
-    fprintf(arquivo, "Login: %s | Senha: %s\n", login, senha);
+    // Escrever o login e a senha no arquivo binário
+    fwrite(login, sizeof(char), sizeof(login), arquivo);
+    fwrite(senha, sizeof(char), sizeof(senha), arquivo);
 
     fclose(arquivo);
 
     printf("Login bem-sucedido. Dados de login salvos.\n");
+    getchar();
     system("cls");
     return 1; // Login bem-sucedido
 }
@@ -58,9 +58,7 @@ void menuPrincipal() {
         printf("#####################################################\n");
         printf("##                                                 ##\n");
         printf("##       1 - Cliente                               ##\n");
-        printf("##       2 - Leitura de Cartas                     ##\n");
-        printf("##       3 - Horoscopo Diario                      ##\n");
-        printf("##       4 - Sobre Seu Signo                       ##\n");
+		printf("##       2 - Cigana                                ##\n");
         printf("##       0 - Sair                                  ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
@@ -77,26 +75,12 @@ void menuPrincipal() {
                 break;
 
             case '2':
-                leituraDeCartas();
+                menuCigana();
                 printf("Pressione enter para continuar...");
                 getchar();
                 system("cls");
                 break;
-
-            case '3':
-                horoscopoDiario();
-                printf("Pressione enter para continuar...");
-                getchar();
-                system("cls");
-                break;
-
-            case '4':
-                sobreSeuSigno();
-                printf("Pressione enter para continuar...");
-                getchar();
-                system("cls");
-                break;
-
+            
             case '0':
                 system("cls");
                 printf("Saindo do programa...\n");
