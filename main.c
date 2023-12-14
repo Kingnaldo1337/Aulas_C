@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Clientes/clientes.h"
-#include "Clientes/menu_clientes.h"
-#include "Sigana/menu_cigana.h"
-#include "Relatorio/menu_relatorios.h"
+#include "Clientes/clientes.c"
+#include "Clientes/menu_clientes.c"
+#include "Sigana/menu_cigana.c"
+#include "Relatorio/menu_relatorios.c"
 #include <time.h>
 #include <locale.h>
-#include "Agenda/agenda.h"
-#include "Agenda/menu_agenda.h"
+#include "Agenda/agenda.c"
+#include "Agenda/menu_agenda.c"
 
 
 int fazerLogin() {

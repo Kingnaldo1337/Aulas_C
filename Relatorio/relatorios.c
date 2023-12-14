@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../Clientes/clientes.h"
+#include "relatorios.h"
 
 void gerarRelatorio() {
     system("clear || cls");
@@ -15,6 +16,7 @@ void gerarRelatorio() {
     printf("Email: reinaldo20jr@gmail.com\n");
     printf("Telefone: 84998344139\n");
     printf("Signo: Áries\n");
+    printf("signo áries, seu dia será mais ou menos");
 
     // Separador entre clientes
     printf("\n---------------------------------------------------\n");
@@ -25,6 +27,7 @@ void gerarRelatorio() {
     printf("Email: anderson@gmail.com\n");
     printf("Telefone: 84998344130\n");
     printf("Signo: Touro\n");
+    printf("Signo touro, seu dia será maravilhoso\n");
 
     // Separador entre clientes
     printf("\n---------------------------------------------------\n");
@@ -35,6 +38,7 @@ void gerarRelatorio() {
     printf("Email: boyboy@gmail.com\n");
     printf("Telefone: 84998344137\n");
     printf("Signo: Peixes\n");
+    printf("Signo peixes, O seu dia será terrivel");
 
     printf("\nPressione enter para continuar...");
     getchar();  // Aguardar Enter após a mensagem
@@ -49,9 +53,10 @@ void relatorio_ordenado(){
     // Cliente 1
     printf("\nNome: Anderson\n");
     printf("CPF: 12199119417\n");
-    printf("Email: anderson@gmail.com\n");
+    printf("Email: anderson@gmail.com\n"); printf("signo áries, seu dia será mais ou menos");
     printf("Telefone: 84998344130\n");
     printf("Signo: Touro\n");
+    printf("Signo touro, seu dia será maravilhoso\n");
 
     // Separador entre clientes
     printf("\n---------------------------------------------------\n");
@@ -62,6 +67,7 @@ void relatorio_ordenado(){
     printf("Email: boyboy@gmail.com\n");
     printf("Telefone: 84998344137\n");
     printf("Signo: Peixes\n");
+    printf("Signo peixes, O seu dia será terrivel");
 
     // Separador entre clientes
     printf("\n---------------------------------------------------\n");
@@ -72,6 +78,7 @@ void relatorio_ordenado(){
     printf("Email: reinaldo20jr@gmail.com\n");
     printf("Telefone: 84998344139\n");
     printf("Signo: Áries\n");
+    printf("signo áries, seu dia será mais ou menos");
 
     printf("\nPressione enter para continuar...");
     getchar();  // Aguardar Enter após a mensagem
