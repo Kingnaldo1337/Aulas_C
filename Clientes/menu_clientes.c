@@ -29,39 +29,39 @@ void menuClientes() {
                 cadastrarCliente();
                 printf("Pressione enter para continuar...");
                 getchar();
-                system("cls");
+                system("clear || cls");
                 break;
 
             case '2':
                 listarClientes();
                 printf("Pressione enter para continuar...");
                 getchar();
-                system("cls");
+                system("clear || cls");
                 break;
 
             case '3':
                 apagarCliente();
                 printf("Pressione enter para continuar...");
                 getchar();
-                system("cls");
+                system("clear || cls");
                 break;
 
             case '4':
                 modificarCliente();
                 printf("Pressione enter para continuar...");
                 getchar();
-                system("cls");
+                system("clear || cls");
                 break;
 
             case '0':
+				system("clear || cls");
                 menuPrincipal();
                 printf("Pressione enter para continuar...");
                 getchar();
-                system("cls");
                 return;
 
             default:
-                system("cls");
+                system("clear || cls");
                 printf("Opção inválida. Escolha uma opção válida do menu.\n");
                 break;
         }

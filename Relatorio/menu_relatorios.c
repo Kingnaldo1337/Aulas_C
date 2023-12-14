@@ -1,23 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "cigana.h" 
-#include "cartas.h"
-#include "horoscopo.h"
-#include "signo.h"
-#include <locale.h>
-#include <string.h>
+#include "menu_relatorios.h"
+#include "relatorios.h"
 
-void menuCigana() {
+void menuRelatorios() {
     char opcao;
 
     do {
         printf("#####################################################\n");
-        printf("##               Menu Cigana                        ##\n");
+        printf("##                 Menu de Relatórios               ##\n");
         printf("#####################################################\n");
         printf("##                                                 ##\n");
-        printf("##       1 - Leitura de Cartas                     ##\n");
-        printf("##       2 - Horoscopo Diario                      ##\n");
-        printf("##       3 - Sobre Seu Signo                       ##\n");
+        printf("##       1 - Gerar Relatório de Clientes           ##\n");
+        printf("##       2 - Gerar Relatório Ordenado   	        ##\n");
         printf("##       0 - Voltar ao Menu Principal               ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
@@ -28,27 +23,20 @@ void menuCigana() {
 
         switch (opcao) {
             case '1':
-                leituraDeCartas();
+                gerarRelatorio();
                 printf("Pressione enter para continuar...");
                 getchar();
                 system("clear || cls");
                 break;
-
             case '2':
-                horoscopoDiario();
-                printf("Pressione enter para continuar...");
+            	relatorio_ordenado();
+            	printf("Pressione enter para continuar...");
                 getchar();
                 system("clear || cls");
-                break;
-
-            case '3':
-            	system("clear || cls");
-                sobreSeuSigno();
-                printf("Pressione enter para continuar...");
-                getchar();
-                break;
 
             case '0':
+            	printf("Pressione enter para continuar...");
+            	getchar();
                 system("clear || cls");
                 return;
 

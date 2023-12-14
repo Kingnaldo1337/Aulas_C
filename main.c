@@ -4,10 +4,11 @@
 #include "Clientes/clientes.h"
 #include "Clientes/menu_clientes.h"
 #include "Sigana/menu_cigana.h"
+#include "Relatorio/menu_relatorios.h"
 #include <time.h>
 #include <locale.h>
-
-
+#include "Agenda/agenda.h"
+#include "Agenda/menu_agenda.h"
 
 
 int fazerLogin() {
@@ -39,7 +40,7 @@ int fazerLogin() {
 
     printf("Login bem-sucedido. Dados de login salvos.\n");
     getchar();
-    system("cls");
+    system("clear || cls");
     return 1; // Login bem-sucedido
 }
 
@@ -59,6 +60,8 @@ void menuPrincipal() {
         printf("##                                                 ##\n");
         printf("##       1 - Cliente                               ##\n");
 		printf("##       2 - Cigana                                ##\n");
+		printf("##       3 - Relatorio                             ##\n");
+		printf("##       4 - Agendamento                           ##\n");
         printf("##       0 - Sair                                  ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
@@ -69,25 +72,35 @@ void menuPrincipal() {
 
         switch (opcao) {
             case '1':
+            	system("clear || cls");
                 menuClientes();
-                system("cls");
                 getchar();
                 break;
 
             case '2':
+				system("clear || cls");
                 menuCigana();
                 printf("Pressione enter para continuar...");
                 getchar();
-                system("cls");
                 break;
+            case '3':
+    			system("clear || cls");
+    			menuRelatorios();
+    			getchar();
+    			break;
+    		case '4':
+    			system("clear || cls");
+    			menuAgenda();
+    			getchar();
+    			break;
             
             case '0':
-                system("cls");
+                system("clear || cls");
                 printf("Saindo do programa...\n");
                 break;
 
             default:
-                system("cls");
+                system("clear || cls");
                 printf("Opção inválida. Escolha uma opção válida do menu.\n");
                 break;
         }
