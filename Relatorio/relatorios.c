@@ -10,7 +10,7 @@ void gerarRelatorio() {
     printf("##                Lista de Clientes                ##\n");
     printf("#####################################################\n");
 
-    printf("Em Desenvolvimento...");
+    printf("Em Desenvolvimento...\n");
 
     printf("\nPressione enter para continuar...");
     getchar();  // Aguardar Enter após a mensagem
@@ -22,7 +22,7 @@ void relatorio_ordenado(){
     printf("##                Lista de Clientes                ##\n");
     printf("#####################################################\n");
 
-    printf("Em Desenvolvimento...");
+    printf("Em Desenvolvimento...\n");
 
     printf("\nPressione enter para continuar...");
     getchar();  // Aguardar Enter após a mensagem
