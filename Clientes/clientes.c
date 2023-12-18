@@ -2,7 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "clientes.h"
+
+// Definição da estrutura Cliente
+typedef struct {
+    char nome[100];
+    char cpf[15];
+    char email[100];
+    char telefone[15];
+    char signo[20];
+} Cliente;
 
 int obterNomeCliente(const char *cpf, char *nome) {
     FILE *arquivo = fopen("clientes.dat", "rb");

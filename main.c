@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Clientes/clientes.c"
-#include "Clientes/menu_clientes.c"
-#include "Sigana/menu_cigana.c"
-#include "Relatorio/menu_relatorios.c"
+#include "Clientes/clientes.h"
+#include "Clientes/menu_clientes.h"
+#include "Sigana/menu_cigana.h"
+#include "sobre.h"
+#include "Relatorio/menu_relatorios.h"
 #include <time.h>
 #include <locale.h>
-#include "Agenda/agenda.c"
-#include "Agenda/menu_agenda.c"
+#include "Agenda/agenda.h"
+#include "Agenda/menu_agenda.h"
 
 
 int fazerLogin() {
@@ -62,6 +63,7 @@ void menuPrincipal() {
 		printf("##       2 - Cigana                                ##\n");
 		printf("##       3 - Relatorio                             ##\n");
 		printf("##       4 - Agendamento                           ##\n");
+		printf("##       5 - Sobre                                 ##\n");
         printf("##       0 - Sair                                  ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
@@ -91,6 +93,11 @@ void menuPrincipal() {
     		case '4':
     			system("clear || cls");
     			menuAgenda();
+    			getchar();
+    			break;
+    		case '5':
+    			system("clear || cls");
+    			tela_menu_info();
     			getchar();
     			break;
             

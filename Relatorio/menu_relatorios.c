@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "menu_relatorios.h"
 #include "relatorios.h"
-#include "relatorios.c"
 
 void menuRelatorios() {
     char opcao;
