@@ -16,6 +16,7 @@ void menuClientes() {
         printf("##       2 - Listar Clientes                        ##\n");
         printf("##       3 - Apagar Cliente                         ##\n");
         printf("##       4 - Modificar Cliente                      ##\n");
+        printf("##       5 - Apagar todos os clientes               ##\n");
         printf("##       0 - Voltar ao Menu Principal               ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
@@ -52,7 +53,12 @@ void menuClientes() {
                 getchar();
                 system("clear || cls");
                 break;
-
+            case '5':
+                apagarTodosClientes();
+                printf("Pressione enter para continuar...");
+                getchar();
+                system("clear || cls");
+                break;
             case '0':
 				system("clear || cls");
                 menuPrincipal();

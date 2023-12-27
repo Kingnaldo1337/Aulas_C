@@ -47,7 +47,7 @@ void leituraDeCartas(void) {
 		printf("Parte positiva:Velocidade, movimento, sorte, destino, mudan�a, viagens, acaso. \n");
 		printf("parte negativa:Inconstencia, incerteza, imprevisibilidade, vulnerabilidade, volatilidade, oscilacao. \n");
 	}else if (cartaIndex == 11){
-		printf("Parte positiva:Consistencia, destreza, independ�ncia, coragem, vitalidade, resistencia. \n");
+		printf("Parte positiva:Consistencia, destreza, independencia, coragem, vitalidade, resistencia. \n");
 		printf("parte negativa:Desconfianca, egoismo, autossuficiencia. \n");
 	}else if (cartaIndex == 12){
 		printf("Parte positiva:Reflexao, entrega, sensibilidade, resignacao, abnegacao. \n");

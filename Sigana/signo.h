@@ -7,7 +7,7 @@ void sobreSeuSigno(void) {
     int escolhaSigno;
 
     printf("Escolha o seu signo:\n");
-    printf("1 - aries\n2 - Touro\n3 - Gemeos\n4 - Cancer\n5 - Le�o\n6 - Virgem\n7 - Libra\n8 - Escorpiao\n9 - Sagit�rio\n10 - Capric�rnio\n11 - Aquario\n12 - Peixes\n");
+    printf("1 - aries\n2 - Touro\n3 - Gemeos\n4 - Cancer\n5 - Leao\n6 - Virgem\n7 - Libra\n8 - Escorpiao\n9 - Sagitario\n10 - Capric�rnio\n11 - Aquario\n12 - Peixes\n");
     printf("Digite o numero correspondente ao seu signo: ");
     scanf("%d", &escolhaSigno);
 
@@ -22,7 +22,7 @@ void sobreSeuSigno(void) {
             printf("Planeta: Venus\n");
             break;
         case 3:
-            printf("Gemeos: Quem tem sol em G�meos costuma ser comunicativo, curioso e versatil.\n");
+            printf("Gemeos: Quem tem sol em Gemeos costuma ser comunicativo, curioso e versatil.\n");
             printf("Planeta: Mercurio\n");
             break;
         case 4:

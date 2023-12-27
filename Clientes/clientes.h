@@ -20,6 +20,7 @@ void cadastrarCliente();
 void listarClientes();
 void apagarCliente();
 void modificarCliente();
+void apagarTodosClientes();
 int obterNomeCliente(const char *cpf, char *nome);
 
 #endif

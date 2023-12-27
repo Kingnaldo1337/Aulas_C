@@ -4,6 +4,21 @@
 #include <ctype.h>
 #include "clientes.h"
 
+int validarCpf(const char *cpf) {
+    // Verificar se o CPF tem 11 digitos
+    return (strlen(cpf) == 11);
+}
+
+int validarEmail(const char *email) {
+    // Verificar se o e-mail contem um '@'
+    return (strchr(email, '@') != NULL);
+}
+
+int validarTelefone(const char *telefone) {
+    // Verificar se o telefone tem pelo menos 10 digitos
+    return (strlen(telefone) >= 10);
+}
+
 int obterNomeCliente(const char *cpf, char *nome) {
     FILE *arquivo = fopen("clientes.dat", "rb");
     if (arquivo == NULL) {
@@ -39,20 +54,6 @@ void limparCpf(char *cpf) {
     cpf[j] = '\0';
 }
 
-int validarCpf(const char *cpf) {
-    // Verificar se o CPF tem 11 d�gitos
-    return (strlen(cpf) == 11);
-}
-
-int validarEmail(const char *email) {
-    // Verificar se o e-mail contem um '@'
-    return (strchr(email, '@') != NULL);
-}
-
-int validarTelefone(const char *telefone) {
-    // Verificar se o telefone tem pelo menos 10 digitos
-    return (strlen(telefone) >= 10);
-}
 
 int verificarDuplicidade(const char *campo, const char *valor) {
     FILE *arquivo = fopen("clientes.dat", "rb");
@@ -186,7 +187,7 @@ void cadastrarCliente() {
         }
     } while (!validarEmail(cliente.email) || verificarDuplicidade("email", cliente.email));
 
-    // Valida��o e verificacao de duplicidade do telefone
+    // Validacao e verificacao de duplicidade do telefone
     do {
         printf("Telefone: ");
         fgets(cliente.telefone, sizeof(cliente.telefone), stdin);
@@ -212,7 +213,7 @@ void cadastrarCliente() {
     fclose(arquivo);
 
     printf("Cliente cadastrado com sucesso!\n");
-    getchar();  // Aguardar Enter ap�s a mensagem
+    getchar();  // Aguardar Enter apos a mensagem
 }
 
 void listarClientes() {
@@ -241,7 +242,7 @@ void listarClientes() {
 
     // Verificar se a alocacao foi bem-sucedida
     if (cliente == NULL) {
-        printf("Erro de alocacao de mem�ria.\n");
+        printf("Erro de alocacao de memoria.\n");
         fclose(arquivo);
         return;
     }
@@ -319,6 +320,18 @@ void apagarCliente() {
         remove("clientes_temp.dat");
     }
 }
+void apagarTodosClientes() {
+    FILE *arquivo = fopen("clientes.dat", "wb"); // Abre o arquivo para escrita, removendo o conteúdo existente
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo para apagar os clientes.\n");
+        return;
+    }
+
+    fclose(arquivo);
+    printf("Todos os clientes foram apagados.\n");
+    printf("Pressione enter para continuar.\n");
+    getchar();  // Aguardar Enter após a mensagem
+}
 
 void modificarCliente() {
     FILE *arquivoEntrada = fopen("clientes.dat", "rb");
@@ -382,7 +395,6 @@ void modificarCliente() {
             fwrite(&clientes[i], sizeof(Cliente), 1, arquivoSaida);
         }
     }
-
     fclose(arquivoEntrada);
     fclose(arquivoSaida);
 
@@ -399,3 +411,4 @@ void modificarCliente() {
         remove("clientes_temp.dat");
     }
 }
+
