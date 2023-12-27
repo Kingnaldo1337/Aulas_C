@@ -83,66 +83,35 @@ int verificarDuplicidade(const char *campo, const char *valor) {
     fclose(arquivo);
     return 0; // Nao ha duplicidade
 }
+void calcularSigno(const char *dataNascimento, char *signo) {
 
-void escolherSigno(char *signo) {
-    printf("Escolha o signo:\n");
-    printf("1 - Aries\n");
-    printf("2 - Touro\n");
-    printf("3 - Peixes\n");
-    printf("4 - Aquario\n");
-    printf("5 - Gemeos\n");
-    printf("6 - Leao\n");
-    printf("7 - Virgem\n");
-    printf("8 - Escorpiao\n");
-    printf("9 - Capricornio\n");
-    printf("10 - Balanca\n");
-    printf("11 - Sargitario\n");
+    int dia, mes;
+    sscanf(dataNascimento, "%d/%d", &dia, &mes);
 
-    int opcao;
-    do {
-        printf("Opcao: ");
-        scanf("%d", &opcao);
-
-        if (opcao < 1 || opcao > 11) {
-            printf("Opcao invalida, digite novamente.\n");
-        }
-
-    } while (opcao < 1 || opcao > 11);
-
-    switch (opcao) {
-        case 1:
-            strcpy(signo, "Aries");
-            break;
-        case 2:
-            strcpy(signo, "Touro");
-            break;
-        case 3:
-            strcpy(signo, "Peixes");
-            break;
-        case 4:
-            strcpy(signo, "Aquario");
-            break;
-        case 5:
-            strcpy(signo, "Gemeos");
-            break;
-        case 6:
-            strcpy(signo, "Leao");
-            break;
-        case 7:
-            strcpy(signo, "Virgem");
-            break;
-        case 8:
-            strcpy(signo, "Escorpiao");
-            break;
-        case 9:
-            strcpy(signo, "Capricornio");
-            break;
-        case 10:
-            strcpy(signo, "Balanca");
-            break;
-        case 11:
-            strcpy(signo, "Sargitario");
-            break;
+    if ((mes == 3 && dia >= 21) || (mes == 4 && dia <= 19)) {
+        strcpy(signo, "Aries");
+    } else if ((mes == 4 && dia >= 20) || (mes == 5 && dia <= 20)) {
+        strcpy(signo, "Touro");
+    } else if ((mes == 5 && dia >= 21) || (mes == 6 && dia <= 20)) {
+        strcpy(signo, "Gemeos");
+    } else if ((mes == 6 && dia >= 21) || (mes == 7 && dia <= 22)) {
+        strcpy(signo, "Cancer");
+    } else if ((mes == 7 && dia >= 23) || (mes == 8 && dia <= 22)) {
+        strcpy(signo, "Leao");
+    } else if ((mes == 8 && dia >= 23) || (mes == 9 && dia <= 22)) {
+        strcpy(signo, "Virgem");
+    } else if ((mes == 9 && dia >= 23) || (mes == 10 && dia <= 22)) {
+        strcpy(signo, "Libra");
+    } else if ((mes == 10 && dia >= 23) || (mes == 11 && dia <= 21)) {
+        strcpy(signo, "Escorpiao");
+    } else if ((mes == 11 && dia >= 22) || (mes == 12 && dia <= 21)) {
+        strcpy(signo, "Sagitario");
+    } else if ((mes == 12 && dia >= 22) || (mes == 1 && dia <= 19)) {
+        strcpy(signo, "Capricórnio");
+    } else if ((mes == 1 && dia >= 20) || (mes == 2 && dia <= 18)) {
+        strcpy(signo, "Aquario");
+    } else {
+        strcpy(signo, "Peixes");
     }
 }
 
@@ -197,8 +166,18 @@ void cadastrarCliente() {
             printf("Telefone invalido ou ja cadastrado, digite novamente.\n");
         }
     } while (!validarTelefone(cliente.telefone) || verificarDuplicidade("telefone", cliente.telefone));
+    do {
+        printf("Data de Nascimento (DD/MM/AAAA): ");
+        fgets(cliente.dataNascimento, sizeof(cliente.dataNascimento), stdin);
+        cliente.dataNascimento[strcspn(cliente.dataNascimento, "\n")] = '\0';
 
-    escolherSigno(cliente.signo);
+        if (strlen(cliente.dataNascimento) != 10) {
+            printf("Data de Nascimento inválida, digite novamente.\n");
+        }
+    } while (strlen(cliente.dataNascimento) != 10);
+
+    // Calcular o signo com base na data de nascimento
+    calcularSigno(cliente.dataNascimento, cliente.signo);
 
     // Abrir o arquivo para escrita (ou criacao, se n�o existir)
     FILE *arquivo = fopen("clientes.dat", "ab");
@@ -385,8 +364,6 @@ void modificarCliente() {
             printf("Novo Telefone: ");
             fgets(clientes[i].telefone, sizeof(clientes[i].telefone), stdin);
             clientes[i].telefone[strcspn(clientes[i].telefone, "\n")] = '\0';
-
-            escolherSigno(clientes[i].signo);
 
             // Escrever o cliente modificado no arquivo temporario
             fwrite(&clientes[i], sizeof(Cliente), 1, arquivoSaida);

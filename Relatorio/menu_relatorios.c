@@ -19,21 +19,23 @@ void menuRelatorios() {
         printf("#####################################################\n");
         printf("Escolha uma opcao:");
         scanf(" %c", &opcao);
-        getchar(); // Limpar o caractere de nova linha
+        getchar();
         printf("\n");
 
         switch (opcao) {
             case '1':
-                gerarRelatorio();
+                gerarRelatorioGeral();
                 printf("Pressione enter para continuar...");
                 getchar();
                 system("clear || cls");
                 break;
             case '2':
-            	relatorio_ordenado();
+            	char signoDesejado[20];
+                printf("Informe o signo desejado:       (digite o signo sem acententuacao) ");
+                scanf("%19s", signoDesejado);
+                listarClientesPorSigno(signoDesejado);
             	printf("Pressione enter para continuar...");
                 getchar();
-                system("clear || cls");
 
             case '0':
             	printf("Pressione enter para continuar...");

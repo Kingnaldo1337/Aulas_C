@@ -3,7 +3,7 @@
 
 #include "../Clientes/clientes.h"
 
-void gerarRelatorio();
-void relatorio_ordenado();
+void listarClientesPorSigno(const char *signoDesejado);
+void gerarRelatorioGeral();
 
 #endif

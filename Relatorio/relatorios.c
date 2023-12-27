@@ -4,26 +4,50 @@
 #include "../Clientes/clientes.h"
 #include "relatorios.h"
 
-void gerarRelatorio() {
+void listarClientesPorSigno(const char *signoDesejado) {
+    FILE *arquivo = fopen("clientes.dat", "rb");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo para leitura.\n");
+        return;
+    }
+
     system("clear || cls");
     printf("#####################################################\n");
-    printf("##                Lista de Clientes                ##\n");
+    printf("##       Lista de Clientes por Signo (%s)        ##\n", signoDesejado);
     printf("#####################################################\n");
 
-    printf("Em Desenvolvimento...\n");
+    Cliente cliente;
 
-    printf("\nPressione enter para continuar...");
-    getchar();  // Aguardar Enter após a mensagem
+    while (fread(&cliente, sizeof(Cliente), 1, arquivo) == 1) {
+        if (strcmp(cliente.signo, signoDesejado) == 0) {
+            printf("Nome: %s | CPF: %s | Email: %s | Telefone: %s | Data Nascimento: %s\n",
+                   cliente.nome, cliente.cpf, cliente.email,
+                   cliente.telefone, cliente.dataNascimento);
+        }
+    }
+
+    fclose(arquivo);
 }
 
-void relatorio_ordenado(){
-	system("clear || cls");
+void gerarRelatorioGeral() {
+    FILE *arquivo = fopen("clientes.dat", "rb");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo para leitura.\n");
+        return;
+    }
+
+    system("clear || cls");
     printf("#####################################################\n");
-    printf("##                Lista de Clientes                ##\n");
+    printf("##              Relatorio Geral de Clientes         ##\n");
     printf("#####################################################\n");
 
-    printf("Em Desenvolvimento...\n");
+    Cliente cliente;
 
-    printf("\nPressione enter para continuar...");
-    getchar();  // Aguardar Enter após a mensagem
+    while (fread(&cliente, sizeof(Cliente), 1, arquivo) == 1) {
+        printf("Nome: %s | CPF: %s | Email: %s | Telefone: %s | Data Nascimento: %s | Signo: %s\n",
+               cliente.nome, cliente.cpf, cliente.email,
+               cliente.telefone, cliente.dataNascimento, cliente.signo);
+    }
+
+    fclose(arquivo);
 }
