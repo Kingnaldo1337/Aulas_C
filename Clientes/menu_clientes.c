@@ -19,7 +19,7 @@ void menuClientes() {
         printf("##       0 - Voltar ao Menu Principal               ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
-        printf("Escolha uma opção:");
+        printf("Escolha uma opcao:");
         scanf(" %c", &opcaoClientes);
         getchar(); // Limpar o caractere de nova linha
         printf("\n");
@@ -62,7 +62,7 @@ void menuClientes() {
 
             default:
                 system("clear || cls");
-                printf("Opção inválida. Escolha uma opção válida do menu.\n");
+                printf("Opcao invalida. Escolha uma opcao valida do menu.\n");
                 break;
         }
     } while (opcaoClientes != '0');

@@ -7,7 +7,7 @@
 void agendarConsulta(const char *cpfCliente) {
     Consulta consulta;
 
-    // Verificar se o CPF do cliente está cadastrado
+    // Verificar se o CPF do cliente esta cadastrado
     if (!verificarDuplicidade("cpf", cpfCliente)) {
         printf("Nenhum cliente cadastrado com o CPF fornecido.\n");
         printf("Pressione enter para continuar...");
@@ -23,12 +23,12 @@ void agendarConsulta(const char *cpfCliente) {
     fgets(consulta.dataHora, sizeof(consulta.dataHora), stdin);
     consulta.dataHora[strcspn(consulta.dataHora, "\n")] = '\0';
 
-    // Obter descrição da consulta
-    printf("Digite a descrição da consulta: ");
+    // Obter descriï¿½ï¿½o da consulta
+    printf("Digite a descricao da consulta: ");
     fgets(consulta.descricao, sizeof(consulta.descricao), stdin);
     consulta.descricao[strcspn(consulta.descricao, "\n")] = '\0';
 
-    // Abrir o arquivo para escrita (ou criação, se não existir)
+    // Abrir o arquivo para escrita (ou criacao, se nao existir)
     FILE *arquivo = fopen("consultas.dat", "ab");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo para escrita.\n");
@@ -102,7 +102,7 @@ void apagarConsultaPorCpf(const char *cpfCliente) {
         rename("consultas_temp.dat", "consultas.dat");
         printf("Consulta(s) removida(s) com sucesso.\n");
     } else {
-        printf("Consulta(s) não encontrada(s) para o CPF fornecido.\n");
+        printf("Consulta(s) nao encontrada(s) para o CPF fornecido.\n");
         remove("consultas_temp.dat");
     }
 }
@@ -128,13 +128,13 @@ void modificarConsultaPorCpf(const char *cpfCliente) {
             printf("Nova Data e Hora (formato dd/mm/yyyy hh:mm): ");
             scanf(" %[^\n]", consultaAtual.dataHora);
 
-            printf("Nova Descrição: ");
+            printf("Nova Descriï¿½ï¿½o: ");
             scanf(" %[^\n]", consultaAtual.descricao);
 
-            // Escrever a consulta modificada no arquivo temporário
+            // Escrever a consulta modificada no arquivo temporï¿½rio
             fwrite(&consultaAtual, sizeof(Consulta), 1, arquivoSaida);
         } else {
-            // Se não corresponder, escrever a consulta no arquivo temporário
+            // Se nï¿½o corresponder, escrever a consulta no arquivo temporï¿½rio
             fwrite(&consultaAtual, sizeof(Consulta), 1, arquivoSaida);
         }
     }
@@ -147,7 +147,7 @@ void modificarConsultaPorCpf(const char *cpfCliente) {
         rename("consultas_temp.dat", "consultas.dat");
         printf("Consulta modificada com sucesso.\n");
     } else {
-        printf("Consulta não encontrada para o CPF fornecido.\n");
+        printf("Consulta nï¿½o encontrada para o CPF fornecido.\n");
         remove("consultas_temp.dat");
     }
 }

@@ -16,7 +16,7 @@ int fazerLogin() {
     char senha[50];
 
     printf("#####################################################\n");
-    printf("##               Faça o Login                       ##\n");
+    printf("##               Faca o Login                       ##\n");
     printf("#####################################################\n");
 
     printf("Login: ");
@@ -24,7 +24,7 @@ int fazerLogin() {
     printf("Senha: ");
     scanf("%s", senha);
 
-    // Abrir o arquivo para escrita (ou criação, se não existir)
+    // Abrir o arquivo para escrita (ou criacao, se nao existir)
     FILE *arquivo = fopen("dados_de_login.dat", "ab");
 
     if (arquivo == NULL) {
@@ -32,7 +32,7 @@ int fazerLogin() {
         return 0; // Falha ao salvar
     }
 
-    // Escrever o login e a senha no arquivo binário
+    // Escrever o login e a senha no arquivo binï¿½rio
     fwrite(login, sizeof(char), sizeof(login), arquivo);
     fwrite(senha, sizeof(char), sizeof(senha), arquivo);
 
@@ -52,9 +52,9 @@ void menuPrincipal() {
         printf("#####################################################\n");
         printf("##                 Sigana Virtual                  ##\n");
         printf("##Desenvolvedor: Reinaldo Alves Pereira Junior     ##\n");
-        printf("##Curso: Sistemas de Informação 2o periodo         ##\n");
+        printf("##Curso: Sistemas de Informacao 2o periodo         ##\n");
         printf("##Instagram: @r3inaldo_jr)                         ##\n");
-        printf("##Jardim do seridó RN                              ##\n");
+        printf("##Jardim do serido RN                              ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
         printf("##                                                 ##\n");
@@ -65,7 +65,7 @@ void menuPrincipal() {
         printf("##       0 - Sair                                  ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
-        printf("Escolha uma opção:");
+        printf("Escolha uma opcao:");
         scanf(" %c", &opcao);
         getchar(); // Limpar o caractere de nova linha
         printf("\n");
@@ -101,7 +101,7 @@ void menuPrincipal() {
 
             default:
                 system("clear || cls");
-                printf("Opção inválida. Escolha uma opção válida do menu.\n");
+                printf("Opcaoo invalida. Escolha uma opcaoo valida do menu.\n");
                 break;
         }
     } while (opcao != '0');

@@ -9,15 +9,15 @@ void menuRelatorios() {
 
     do {
         printf("#####################################################\n");
-        printf("##                 Menu de Relatórios               ##\n");
+        printf("##                 Menu de Relatorios               ##\n");
         printf("#####################################################\n");
         printf("##                                                 ##\n");
-        printf("##       1 - Gerar Relatório de Clientes           ##\n");
-        printf("##       2 - Gerar Relatório Ordenado   	        ##\n");
+        printf("##       1 - Gerar Relatario de Clientes           ##\n");
+        printf("##       2 - Gerar Relatario Ordenado   	        ##\n");
         printf("##       0 - Voltar ao Menu Principal               ##\n");
         printf("#####################################################\n");
         printf("#####################################################\n");
-        printf("Escolha uma opção:");
+        printf("Escolha uma opcao:");
         scanf(" %c", &opcao);
         getchar(); // Limpar o caractere de nova linha
         printf("\n");
@@ -43,7 +43,7 @@ void menuRelatorios() {
 
             default:
                 system("clear || cls");
-                printf("Opção inválida. Escolha uma opção válida do menu.\n");
+                printf("Opcao invalida. Escolha uma opcao valida do menu.\n");
                 break;
         }
     } while (opcao != '0');

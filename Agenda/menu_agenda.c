@@ -13,7 +13,7 @@ void menuAgenda() {
         printf("3 - Apagar consulta\n");
         printf("4 - Modificar Consulta\n");
         printf("0 - Voltar ao Menu Principal\n");
-        printf("Escolha uma opção: ");
+        printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 
         switch (opcao) {
@@ -49,7 +49,7 @@ void menuAgenda() {
                 printf("Retornando ao Menu Principal.\n");
                 break;
             default:
-                printf("Opção inválida. Tente novamente.\n");
+                printf("Opcao invalida. Tente novamente.\n");
         }
     } while (opcao != 0);
 }

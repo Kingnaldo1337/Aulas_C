@@ -7,66 +7,65 @@ void sobreSeuSigno(void) {
     int escolhaSigno;
 
     printf("Escolha o seu signo:\n");
-    printf("1 - Áries\n2 - Touro\n3 - Gêmeos\n4 - Câncer\n5 - Leão\n6 - Virgem\n7 - Libra\n8 - Escorpião\n9 - Sagitário\n10 - Capricórnio\n11 - Aquário\n12 - Peixes\n");
-    printf("Digite o número correspondente ao seu signo: ");
+    printf("1 - aries\n2 - Touro\n3 - Gemeos\n4 - Cancer\n5 - Leï¿½o\n6 - Virgem\n7 - Libra\n8 - Escorpiao\n9 - Sagitï¿½rio\n10 - Capricï¿½rnio\n11 - Aquario\n12 - Peixes\n");
+    printf("Digite o numero correspondente ao seu signo: ");
     scanf("%d", &escolhaSigno);
 
-    // Exibir informações com base na escolha do usuário
+    // Exibir informaï¿½ï¿½es com base na escolha do usuï¿½rio
     switch (escolhaSigno) {
         case 1:
-            printf("Áries: Quem tem sol em Áries costuma viver no agora; além de possuir um grande prazer em existir, ação e decisão também podem ser algumas de suas marcas.\n");
+            printf("aries: Quem tem sol em aries costuma viver no agora; alï¿½m de possuir um grande prazer em existir, acao e decisao tambem podem ser algumas de suas marcas.\n");
             printf("Planeta: Marte\n");
             break;
         case 2:
-            printf("Touro: Quem tem sol em Touro costuma não abrir mão do que traz conforto e bem-estar, mas pode ter a possessividade em evidência.\n");
-            printf("Planeta: Vênus\n");
+            printf("Touro: Quem tem sol em Touro costuma nao abrir mao do que traz conforto e bem-estar, mas pode ter a possessividade em evidencia.\n");
+            printf("Planeta: Venus\n");
             break;
         case 3:
-            printf("Gêmeos: Quem tem sol em Gêmeos costuma ser comunicativo, curioso e versátil.\n");
-            printf("Planeta: Mercúrio\n");
+            printf("Gemeos: Quem tem sol em Gï¿½meos costuma ser comunicativo, curioso e versatil.\n");
+            printf("Planeta: Mercurio\n");
             break;
-        // Adicione os outros signos aqui com mensagens apropriadas
         case 4:
-            printf("Câncer: Quem tem sol em Câncer costuma ser ligado à família, emocional e intuitivo.\n");
+            printf("Cancer: Quem tem sol em Cancer costuma ser ligado a familia, emocional e intuitivo.\n");
             printf("Planeta: Lua\n");
             break;
         case 5:
-            printf("Leão: Quem tem sol em Leão costuma ser expressivo, carismático e criativo.\n");
+            printf("Leao: Quem tem sol em Leao costuma ser expressivo, carismatico e criativo.\n");
             printf("Planeta: Sol\n");
             break;
         case 6:
-            printf("Virgem: Quem tem sol em Virgem costuma ser prático, detalhista e analítico.\n");
-            printf("Planeta: Mercúrio\n");
+            printf("Virgem: Quem tem sol em Virgem costuma ser pratico, detalhista e analitico.\n");
+            printf("Planeta: Mercï¿½rio\n");
             break;
         case 7:
-            printf("Libra: Quem tem sol em Libra costuma buscar harmonia, beleza e equilíbrio nas relações.\n");
-            printf("Planeta: Vênus\n");
+            printf("Libra: Quem tem sol em Libra costuma buscar harmonia, beleza e equilibrio nas relacoes.\n");
+            printf("Planeta: Venus\n");
             break;
         case 8:
-            printf("Escorpião: Quem tem sol em Escorpião costuma ser intenso, profundo e determinado.\n");
-            printf("Planeta: Plutão\n");
+            printf("Escorpiao: Quem tem sol em Escorpiao costuma ser intenso, profundo e determinado.\n");
+            printf("Planeta: Plutao\n");
             break;
         case 9:
-            printf("Sagitário: Quem tem sol em Sagitário costuma ser otimista, aventureiro e filosófico.\n");
-            printf("Planeta: Júpiter\n");
+            printf("Sagitario: Quem tem sol em Sagitario costuma ser otimista, aventureiro e filosofico.\n");
+            printf("Planeta: Jupiter\n");
             break;
         case 10:
-            printf("Capricórnio: Quem tem sol em Capricórnio costuma ser ambicioso, disciplinado e prudente.\n");
+            printf("Capricornio: Quem tem sol em Capricornio costuma ser ambicioso, disciplinado e prudente.\n");
             printf("Planeta: Saturno\n");
             break;
         case 11:
-            printf("Aquário: Quem tem sol em Aquário costuma ser original, progressista e humanitário.\n");
+            printf("Aquario: Quem tem sol em Aquario costuma ser original, progressista e humanitario.\n");
             printf("Planeta: Urano\n");
             break;
         case 12:
-            printf("Peixes: Quem tem sol em Peixes costuma ser sensível, intuitivo e compassivo.\n");
+            printf("Peixes: Quem tem sol em Peixes costuma ser sensï¿½vel, intuitivo e compassivo.\n");
             printf("Planeta: Netuno\n");
             break;
         default:
-            printf("Opção inválida.\n");
+            printf("Opcao invalida.\n");
             return;
     }
     while (getchar() != '\n');  // Limpar o buffer de entrada
-    getchar();  // Aguardar Enter após a mensagem
+    getchar();  // Aguardar Enter apos a mensagem
 	system("clear || cls");
 }

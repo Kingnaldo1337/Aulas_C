@@ -1,21 +1,21 @@
 void horoscopoDiario(void) {
     const char* signos[12] = {
-        "Áries", "Touro", "Gemeos", "Câncer", "Leão", "Virgem",
-        "Libra", "Escorpião", "Sagirtário", "Capricórnio", "Aquário", "Peixes"
+        "aries", "Touro", "Gemeos", "Cancer", "Leao", "Virgem",
+        "Libra", "Escorpiao", "Sagirtario", "Capricornio", "Aquario", "Peixes"
     };
     
     const char* horoscopos[7] = {
-        "Hoje é um dia de sorte no trabalho. Aproveite as oportunidades que surgirem.",
-        "Seja cuidadoso nas suas decisões financeiras hoje. Evite gastos desnecessários.",
-        "Sua energia e criatividade estão em alta. á um bom momento para atividades sociais.",
-        "Ã‰ hora de cuidar da sua saúde. Mantenha uma alimentação equilibrada e pratique exercícios.",
-        "Este é um dia favorável para investir em relacionamentos. Mostre seu apoio aos amigos.",
-        "Fique atento á s oportunidades de aprendizado. Novos conhecimentos estão ao seu alcance.",
-        "Hoje é um bom dia para relaxar e cuidar de si mesmo. Tire um tempo para o autocuidado."
+        "Hoje e um dia de sorte no trabalho. Aproveite as oportunidades que surgirem.",
+        "Seja cuidadoso nas suas decisoes financeiras hoje. Evite gastos desnecessï¿½rios.",
+        "Sua energia e criatividade estao em alta. e um bom momento para atividades sociais.",
+        "Ã‰ hora de cuidar da sua saude. Mantenha uma alimentacao equilibrada e pratique exercicios.",
+        "Este e um dia favorovel para investir em relacionamentos. Mostre seu apoio aos amigos.",
+        "Fique atento as oportunidades de aprendizado. Novos conhecimentos estao ao seu alcance.",
+        "Hoje e um bom dia para relaxar e cuidar de si mesmo. Tire um tempo para o autocuidado."
     };
     
     int signoIndex = rand() % 12;
     int horoscopoIndex = rand() % 7;
 
-    printf("Horoscópo para %s:\n%s\n", signos[signoIndex], horoscopos[horoscopoIndex]);
+    printf("Horoscï¿½po para %s:\n%s\n", signos[signoIndex], horoscopos[horoscopoIndex]);
 }

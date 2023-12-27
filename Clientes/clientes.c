@@ -7,7 +7,7 @@
 int obterNomeCliente(const char *cpf, char *nome) {
     FILE *arquivo = fopen("clientes.dat", "rb");
     if (arquivo == NULL) {
-        return 0; // Em caso de erro, considerar que não há cliente com esse CPF
+        return 0; // Em caso de erro, considerar que nao ha cliente com esse CPF
     }
 
     Cliente cliente;
@@ -21,7 +21,7 @@ int obterNomeCliente(const char *cpf, char *nome) {
     }
 
     fclose(arquivo);
-    return 0; // Cliente não encontrado
+    return 0; // Cliente nao encontrado
 }
 
 void limparBuffer() {
@@ -40,24 +40,24 @@ void limparCpf(char *cpf) {
 }
 
 int validarCpf(const char *cpf) {
-    // Verificar se o CPF tem 11 dígitos
+    // Verificar se o CPF tem 11 dï¿½gitos
     return (strlen(cpf) == 11);
 }
 
 int validarEmail(const char *email) {
-    // Verificar se o e-mail contém um '@'
+    // Verificar se o e-mail contem um '@'
     return (strchr(email, '@') != NULL);
 }
 
 int validarTelefone(const char *telefone) {
-    // Verificar se o telefone tem pelo menos 10 dígitos
+    // Verificar se o telefone tem pelo menos 10 digitos
     return (strlen(telefone) >= 10);
 }
 
 int verificarDuplicidade(const char *campo, const char *valor) {
     FILE *arquivo = fopen("clientes.dat", "rb");
     if (arquivo == NULL) {
-        return 0; // Em caso de erro, considerar que não há duplicidade
+        return 0; // Em caso de erro, considerar que nao ha duplicidade
     }
 
     Cliente cliente;
@@ -65,22 +65,22 @@ int verificarDuplicidade(const char *campo, const char *valor) {
     while (fread(&cliente, sizeof(Cliente), 1, arquivo) == 1) {
         if (strcmp(campo, "cpf") == 0 && strcmp(cliente.cpf, valor) == 0) {
             fclose(arquivo);
-            return 1; // Já existe um cliente com esse CPF
+            return 1; // Ja existe um cliente com esse CPF
         }
 
         if (strcmp(campo, "email") == 0 && strcmp(cliente.email, valor) == 0) {
             fclose(arquivo);
-            return 1; // Já existe um cliente com esse e-mail
+            return 1; // Ja existe um cliente com esse e-mail
         }
 
         if (strcmp(campo, "telefone") == 0 && strcmp(cliente.telefone, valor) == 0) {
             fclose(arquivo);
-            return 1; // Já existe um cliente com esse telefone
+            return 1; // Ja existe um cliente com esse telefone
         }
     }
 
     fclose(arquivo);
-    return 0; // Não há duplicidade
+    return 0; // Nao ha duplicidade
 }
 
 void escolherSigno(char *signo) {
@@ -99,11 +99,11 @@ void escolherSigno(char *signo) {
 
     int opcao;
     do {
-        printf("Opção: ");
+        printf("Opcao: ");
         scanf("%d", &opcao);
 
         if (opcao < 1 || opcao > 11) {
-            printf("Opção inválida, digite novamente.\n");
+            printf("Opcao invalida, digite novamente.\n");
         }
 
     } while (opcao < 1 || opcao > 11);
@@ -134,7 +134,7 @@ void escolherSigno(char *signo) {
             strcpy(signo, "Escorpiao");
             break;
         case 9:
-            strcpy(signo, "Capricórnio");
+            strcpy(signo, "Capricornio");
             break;
         case 10:
             strcpy(signo, "Balanca");
@@ -159,47 +159,47 @@ void cadastrarCliente() {
         cliente.nome[strcspn(cliente.nome, "\n")] = '\0'; // Remover o caractere de nova linha
 
         if (strlen(cliente.nome) == 0) {
-            printf("Nome inválido, digite novamente.\n");
+            printf("Nome invalido, digite novamente.\n");
         }
     } while (strlen(cliente.nome) == 0);
 
-    // Validação e verificação de duplicidade do CPF
+    // Validacao e verificacao de duplicidade do CPF
     do {
         printf("CPF: ");
         fgets(cliente.cpf, sizeof(cliente.cpf), stdin);
         cliente.cpf[strcspn(cliente.cpf, "\n")] = '\0';
-        limparCpf(cliente.cpf);  // Limpar o CPF antes da validação
+        limparCpf(cliente.cpf);  // Limpar o CPF antes da validacao
 
         if (!validarCpf(cliente.cpf) || verificarDuplicidade("cpf", cliente.cpf)) {
-            printf("CPF inválido ou já cadastrado, digite novamente.\n");
+            printf("CPF invalido ou ja cadastrado, digite novamente.\n");
         }
     } while (!validarCpf(cliente.cpf) || verificarDuplicidade("cpf", cliente.cpf));
 
-    // Validação e verificação de duplicidade do e-mail
+    // Validacao e verificacao de duplicidade do e-mail
     do {
         printf("Email: ");
         fgets(cliente.email, sizeof(cliente.email), stdin);
         cliente.email[strcspn(cliente.email, "\n")] = '\0';
 
         if (!validarEmail(cliente.email) || verificarDuplicidade("email", cliente.email)) {
-            printf("Email inválido ou já cadastrado, digite novamente.\n");
+            printf("Email invalido ou ja cadastrado, digite novamente.\n");
         }
     } while (!validarEmail(cliente.email) || verificarDuplicidade("email", cliente.email));
 
-    // Validação e verificação de duplicidade do telefone
+    // Validaï¿½ï¿½o e verificacao de duplicidade do telefone
     do {
         printf("Telefone: ");
         fgets(cliente.telefone, sizeof(cliente.telefone), stdin);
         cliente.telefone[strcspn(cliente.telefone, "\n")] = '\0';
 
         if (!validarTelefone(cliente.telefone) || verificarDuplicidade("telefone", cliente.telefone)) {
-            printf("Telefone inválido ou já cadastrado, digite novamente.\n");
+            printf("Telefone invalido ou ja cadastrado, digite novamente.\n");
         }
     } while (!validarTelefone(cliente.telefone) || verificarDuplicidade("telefone", cliente.telefone));
 
     escolherSigno(cliente.signo);
 
-    // Abrir o arquivo para escrita (ou criação, se não existir)
+    // Abrir o arquivo para escrita (ou criacao, se nï¿½o existir)
     FILE *arquivo = fopen("clientes.dat", "ab");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo para escrita.\n");
@@ -212,7 +212,7 @@ void cadastrarCliente() {
     fclose(arquivo);
 
     printf("Cliente cadastrado com sucesso!\n");
-    getchar();  // Aguardar Enter após a mensagem
+    getchar();  // Aguardar Enter apï¿½s a mensagem
 }
 
 void listarClientes() {
@@ -233,15 +233,15 @@ void listarClientes() {
     long tamanhoArquivo = ftell(arquivo);
     rewind(arquivo);
 
-    // Calcular o número de clientes no arquivo
+    // Calcular o numero de clientes no arquivo
     int numClientes = tamanhoArquivo / sizeof(Cliente);
 
-    // Alocar memória para a estrutura Cliente dinamicamente
+    // Alocar memeria para a estrutura Cliente dinamicamente
     cliente = (Cliente *)malloc(sizeof(Cliente));
 
-    // Verificar se a alocação foi bem-sucedida
+    // Verificar se a alocacao foi bem-sucedida
     if (cliente == NULL) {
-        printf("Erro de alocação de memória.\n");
+        printf("Erro de alocacao de memï¿½ria.\n");
         fclose(arquivo);
         return;
     }
@@ -254,7 +254,7 @@ void listarClientes() {
                cliente->telefone, cliente->signo);
     }
 
-    // Liberar a memória alocada
+    // Liberar a memoria alocada
     free(cliente);
 
     fclose(arquivo);
@@ -311,11 +311,11 @@ void apagarCliente() {
         rename("clientes_temp.dat", "clientes.dat");
         printf("Cliente removido com sucesso.\n");
         printf("Pressione enter para continuar.\n");
-        getchar();  // Aguardar Enter após a mensagem
+        getchar();  // Aguardar Enter apos a mensagem
     } else {
-        printf("Cliente não encontrado.\n");
+        printf("Cliente nï¿½o encontrado.\n");
         printf("Pressione enter para continuar.\n");
-        getchar();  // Aguardar Enter após a mensagem
+        getchar();  // Aguardar Enter apos a mensagem
         remove("clientes_temp.dat");
     }
 }
@@ -337,7 +337,7 @@ void modificarCliente() {
 
     limparCpf(cpfModificar);  // Limpar o CPF antes de comparar
 
-    Cliente clientes[100];  // Suponha que haja no máximo 100 clientes
+    Cliente clientes[100];  // Suponha que haja no maximo 100 clientes
     int numClientes = 0;
 
     // Ler os clientes do arquivo
@@ -375,10 +375,10 @@ void modificarCliente() {
 
             escolherSigno(clientes[i].signo);
 
-            // Escrever o cliente modificado no arquivo temporário
+            // Escrever o cliente modificado no arquivo temporario
             fwrite(&clientes[i], sizeof(Cliente), 1, arquivoSaida);
         } else {
-            // Se o CPF não corresponder, escreva o cliente no arquivo temporário
+            // Se o CPF nao corresponder, escreva o cliente no arquivo temporario
             fwrite(&clientes[i], sizeof(Cliente), 1, arquivoSaida);
         }
     }
@@ -393,7 +393,7 @@ void modificarCliente() {
         printf("Pressione enter para continuar.\n");
         getchar();
     } else {
-        printf("Cliente não encontrado.\n");
+        printf("Cliente nao encontrado.\n");
         printf("Pressione enter para continuar.\n");
         getchar();
         remove("clientes_temp.dat");

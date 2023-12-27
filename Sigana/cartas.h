@@ -1,81 +1,81 @@
 #include <time.h>
 void leituraDeCartas(void) {
-	printf("Bem-vindo à Leitura de Cartas de Tarô!\n");
+	printf("Bem-vindo a Leitura de Cartas de Taro!\n");
 
     const char* cartas[22] = {
         "O Louco", "O Mago", "A Sacerdotisa", "A Imperatriz", "O Imperador", "O Hierofante",
-        "Os Amantes", "O Carro", "A Justiça", "O Eremita", "A Roda da Fortuna", "A Força",
-        "O Enforcado", "A Morte", "A Temperança", "O Diabo", "A Torre", "A Estrela",
+        "Os Amantes", "O Carro", "A Justica", "O Eremita", "A Roda da Fortuna", "A Forca",
+        "O Enforcado", "A Morte", "A Temperanca", "O Diabo", "A Torre", "A Estrela",
         "A Lua", "O Sol", "O Julgamento", "O Mundo"
     };
 
     srand(time(NULL));
     int cartaIndex = rand() % 22;
 
-    printf("Você tirou a carta: %s\n", cartas[cartaIndex]);
+    printf("Voce tirou a carta: %s\n", cartas[cartaIndex]);
     if (cartaIndex == 0){
-		printf("Parte positiva:Alegria, coragem, independência, liberdade, livre expressão, viagens. \n");
-		printf("parte negativa:Irresponsabilidade, impulsividade, falta de planejamento, falta de compromisso, imprudência. \n");
+		printf("Parte positiva:Alegria, coragem, independï¿½ncia, liberdade, livre expressao, viagens. \n");
+		printf("parte negativa:Irresponsabilidade, impulsividade, falta de planejamento, falta de compromisso, imprudï¿½ncia. \n");
 	} else if (cartaIndex == 1){
 		printf("Parte positiva:Investimento, iniciativa, vontade de fazer, vitalidade e foco. \n");
-		printf("parte negativa:Imaturidade, inexperiência, falta de persistência, manipulação, trapaça. \n");
+		printf("parte negativa:Imaturidade, inexperiï¿½ncia, falta de persistencia, manipulacaoo, trapaia. \n");
 	} else if (cartaIndex == 2){
-		printf("Parte positiva:Capacidade de amadurecer, reflexão, profundidade, fertilidade, estudos. \n");
+		printf("Parte positiva:Capacidade de amadurecer, reflexao, profundidade, fertilidade, estudos. \n");
 		printf("parte negativa:Recolhimento, isolamento, falta de clareza, falsidade, coisas escusas, infidelidade. \n");
 	}else if (cartaIndex == 3){
-		printf("Parte positiva:Prosperidade, abundância, fertilidade, desenvolvimento, ganhos, comunicação. \n");
+		printf("Parte positiva:Prosperidade, abundancia, fertilidade, desenvolvimento, ganhos, comunicacao. \n");
 		printf("parte negativa:Falta de controle, falta de autonomia, excesso de vaidade. \n");
 	}else if (cartaIndex == 4){
-		printf("Parte positiva:Poder, autoridade, força, realização, independência, proteção. \n");
+		printf("Parte positiva:Poder, autoridade, forca, realizacao, independï¿½ncia, protecao. \n");
 		printf("parte negativa:Autoritarismo, inflexibilidade, rigidez. \n");	
 	}else if (cartaIndex == 5){
-		printf("Parte positiva:Organização, disciplina, lealdade, espiritualidade, fé, união, casamento. \n");
-		printf("parte negativa:Dogma, rigidez, falta de abertura, tradicionalismo, obstinação, preconceito, tabus. \n");
+		printf("Parte positiva:Organizacao, disciplina, lealdade, espiritualidade, fe, uniao, casamento. \n");
+		printf("parte negativa:Dogma, rigidez, falta de abertura, tradicionalismo, obstinacao, preconceito, tabus. \n");
 	}else if (cartaIndex == 6){
-		printf("Parte positiva:Amor, casamento, escolha, compromisso, paixão, positividade, reconciliação. \n");
-		printf("parte negativa:Indecisões, ciúme, traição, irresponsabilidade, insegurança, dúvidas. \n");
+		printf("Parte positiva:Amor, casamento, escolha, compromisso, paixï¿½o, positividade, reconciliacao. \n");
+		printf("parte negativa:Indecisoes, ciume, traicao, irresponsabilidade, inseguranca, duvidas. \n");
 	}else if (cartaIndex == 7){
-		printf("Parte positiva:Dinamismo, ação, velocidade, praticidade, conquista, controle, coragem. \n");
-		printf("parte negativa:Obstinação, alienação, imediatismo, recuo. \n");
+		printf("Parte positiva:Dinamismo, acao, velocidade, praticidade, conquista, controle, coragem. \n");
+		printf("parte negativa:Obstinacao, alienacao, imediatismo, recuo. \n");
 	}else if (cartaIndex == 8){
-		printf("Parte positiva:Equilíbrio, justiça, retidão, racionalidade, imparcialidade. \n");
-		printf("parte negativa:Intolerância, frieza, impaciência. \n");
+		printf("Parte positiva:Equilibrio, justica, retidao, racionalidade, imparcialidade. \n");
+		printf("parte negativa:Intolerï¿½ncia, frieza, impaciencia. \n");
 	}else if (cartaIndex == 9){
-		printf("Parte positiva: Maturidade, sabedoria, compreensão, resiliência, humildade, prudência, paciência, espiritualidade.\n");
-		printf("parte negativa:Lentidão, inflexibilidade, tradicionalismo, resistência à mudanças, inércia, solidão. \n");
+		printf("Parte positiva: Maturidade, sabedoria, compreensao, resiliencia, humildade, prudencia, paciencia, espiritualidade.\n");
+		printf("parte negativa:Lentidao, inflexibilidade, tradicionalismo, resistencia e mudancas, inercia, solidao. \n");
 	}else if (cartaIndex == 10){
-		printf("Parte positiva:Velocidade, movimento, sorte, destino, mudança, viagens, acaso. \n");
-		printf("parte negativa:Inconstância, incerteza, imprevisibilidade, vulnerabilidade, volatilidade, oscilação. \n");
+		printf("Parte positiva:Velocidade, movimento, sorte, destino, mudanï¿½a, viagens, acaso. \n");
+		printf("parte negativa:Inconstencia, incerteza, imprevisibilidade, vulnerabilidade, volatilidade, oscilacao. \n");
 	}else if (cartaIndex == 11){
-		printf("Parte positiva:Consistência, destreza, independência, coragem, vitalidade, resistência. \n");
-		printf("parte negativa:Desconfiança, egoísmo, autossuficiência. \n");
+		printf("Parte positiva:Consistencia, destreza, independï¿½ncia, coragem, vitalidade, resistencia. \n");
+		printf("parte negativa:Desconfianca, egoismo, autossuficiencia. \n");
 	}else if (cartaIndex == 12){
-		printf("Parte positiva:Reflexão, entrega, sensibilidade, resignação, abnegação. \n");
-		printf("parte negativa:Estagnação, relutância, prepotência, vícios. \n");
+		printf("Parte positiva:Reflexao, entrega, sensibilidade, resignacao, abnegacao. \n");
+		printf("parte negativa:Estagnacao, relutancia, prepotencia, vicios. \n");
 	}else if (cartaIndex == 13){
-		printf("Parte positiva:Renovação, transformação, lucidez, consciência, fim de ciclo. \n");
-		printf("parte negativa:Morte, destruição, perda. \n");
+		printf("Parte positiva:Renovacao, transformacao, lucidez, consciencia, fim de ciclo. \n");
+		printf("parte negativa:Morte, destruicao, perda. \n");
 	}else if (cartaIndex == 14){
-		printf("Parte positiva:Equilíbrio, harmonia, moderação, ponderação, comedimento, tranquilidade. \n");
-		printf("parte negativa:Comodismo, falta de ambição, medo de exposição, lentidão. \n");
+		printf("Parte positiva:Equilï¿½brio, harmonia, moderacao, ponderacao, comedimento, tranquilidade. \n");
+		printf("parte negativa:Comodismo, falta de ambicao, medo de exposiï¿½ï¿½o, lentidï¿½o. \n");
 	}else if (cartaIndex == 15){
-		printf("Parte positiva:Da com uma mão \n");
+		printf("Parte positiva:Da com uma mao \n");
 		printf("parte negativa:Tira com a outra \n");
 	}else if (cartaIndex == 16){
-		printf("Parte positiva:Ruptura, transformação, mudança repentina, transmutação. \n");
-		printf("parte negativa:Destruição, caos, sofrimento, confusão, decepção, divórcio, morte, perdas. \n");
+		printf("Parte positiva:Ruptura, transformacao, mudanca repentina, transmutacao. \n");
+		printf("parte negativa:Destruicao, caos, sofrimento, confusï¿½o, decepï¿½ï¿½o, divï¿½rcio, morte, perdas. \n");
 	}else if (cartaIndex == 17){
-		printf("Parte positiva:Esperança, fé, renovação, pureza, inocência, leveza, otimismo, alegria, criatividade. \n");
-		printf("parte negativa:Ilusão, ingenuidade, infantilidade. \n");
+		printf("Parte positiva:Esperanca, fe, renovacao, pureza, inocencia, leveza, otimismo, alegria, criatividade. \n");
+		printf("parte negativa:Ilusao, ingenuidade, infantilidade. \n");
 	}else if (cartaIndex == 18){
-		printf("Parte positiva:Intuição, instinto, sensibilidade, emoção, fecundidade, criatividade. \n");
-		printf("parte negativa:Medo, receio, ilusão, traição, mentira, infidelidade. \n");
+		printf("Parte positiva:Intuicao, instinto, sensibilidade, emocao, fecundidade, criatividade. \n");
+		printf("parte negativa:Medo, receio, ilusao, traicao, mentira, infidelidade. \n");
 	}else if (cartaIndex == 19){
 		printf("Parte positiva:QUENTE \n");
 		printf("parte negativa:QUENTE FEITO A PESTE \n");
 	}else if (cartaIndex == 20){
-		printf("Parte positiva:Superação, espiritualidade, redenção, redescobertas, renascimento. \n");
-		printf("parte negativa:Crítica excessiva, perfeccionismo, ciclo vicioso. \n");
+		printf("Parte positiva:Superacao, espiritualidade, redencao, redescobertas, renascimento. \n");
+		printf("parte negativa:Critica excessiva, perfeccionismo, ciclo vicioso. \n");
 	}else if (cartaIndex == 21){
 		printf("Parte positiva:ZA WARUDO \n");
 		printf("parte negativa: MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA \n");
